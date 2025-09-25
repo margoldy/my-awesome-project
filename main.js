@@ -1,12 +1,15 @@
 
 const dlg = document.getElementById('contactDialog');
 const openBtn = document.getElementById('openDialog');
+const confirmDlg = document.getElementById('confirmDialog');
 const closeBtn = document.getElementById('closeDialog');
 const form = document.getElementById('contactForm');
+const closeConfirmBtn = document.getElementById('closeConfirmDialog');
 let lastActive = null;
 
 const phone = document.getElementById('phone');
 
+//для норм телефона
 phone?.addEventListener('input', () => {
     const digits = phone.value.replace(/\D/g,'').slice(0,11); // до 11 цифр
     const d = digits.replace(/^8/, '7'); // нормализуем 8 → 7
@@ -29,6 +32,11 @@ openBtn.addEventListener('click', () => {
 });
 
 closeBtn.addEventListener('click', () => dlg.close('cancel'));
+
+closeConfirmBtn?.addEventListener('click', () => {
+    confirmDlg.close();
+    lastActive?.focus();
+});
 
     //валидация; при успехе закрываем окно
 form?.addEventListener('submit', (e) => {
@@ -69,10 +77,20 @@ form?.addEventListener('submit', (e) => {
     //Успешная «отправка» (без сервера)
     e.preventDefault();
 
+    dlg.close(); // Закрываем форму
+    confirmDlg.showModal(); // Показываем окно подтверждения
+
     //Если форма внутри <dialog>, закрываем окно:
-    document.getElementById('contactDialog')?.close('success');
-    form.reset();
+    //document.getElementById('contactDialog')?.close('success');
+    //form.reset();
 }); 
 
-dlg.addEventListener('close', () => { lastActive?.focus(); });
+dlg.addEventListener('close', () => {
+    // Не фокусируемся сразу, так как может открыться confirmDialog
+    if (dlg.returnValue !== 'success') {
+        lastActive?.focus();
+    }
+});
+
+confirmDlg?.addEventListener('close', () => { lastActive?.focus(); form.reset(); });
 // Esc по умолчанию вызывает событие 'cancel' и закрывает <dialog>
