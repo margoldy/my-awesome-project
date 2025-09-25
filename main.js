@@ -9,6 +9,7 @@ let lastActive = null;
 
 const phone = document.getElementById('phone');
 
+//для норм телефона
 phone?.addEventListener('input', () => {
     const digits = phone.value.replace(/\D/g,'').slice(0,11); // до 11 цифр
     const d = digits.replace(/^8/, '7'); // нормализуем 8 → 7
