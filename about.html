@@ -19,28 +19,46 @@
 
 <body>
     <header class="header">
-    <div class="container">
-        <div class="header__inner">
-        <a href="index.html" class="header__logo">МнеМенюБы</a>
-        <nav class="nav">
-            <ul class="nav__list">
-            <li><a href="index.html" class="nav__link">Главная</a></li>
-            <li><a href="about.html" class="nav__link">О нас</a></li>
-            <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="header__inner">
+                <a class="header__logo" href="index.html">МнеМенюБы</a>
+                <nav class="nav" aria-label="Основная навигация">
+                    <ul class="nav__list">
+                        <li>
+                            <a class="nav__link" href="index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a class="nav__link nav__link--active" href="about.html">О нас</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
     </header>
 
     <main>
         <!-- Простые "хлебные крошки" -->
-        <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
-        </nav>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <span class="breadcrumbs__current">О нас</span>
+            </li>
+        </ul>
+    </nav>
 
         <h1>О нашей компании</h1>
+        <div class="media">
+            <video controls width="960" height="540" poster="assets/poster.jpg">
+                <source src="assets/video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
         <section>
             <h2>Наша история</h2>
             <p>Текст о том, как все начиналось...</p>
