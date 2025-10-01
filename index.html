@@ -16,25 +16,32 @@
     <meta property="og:description" content="Краткое описание главной страницы вашего сайта">
     <meta property="og:image" content="assets/favicon.jpg">
 
-    <link rel="stylesheet" href="styles.css">
+    <!-- подключение стиля --> 
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 
 
 <body>
     <!-- Шапка сайта -->
     <header class="header">
-    <div class="container">
-        <div class="header__inner">
-        <a href="index.html" class="header__logo">МнеМенюБы</a>
-        <nav class="nav">
-            <ul class="nav__list">
-            <li><a href="index.html" class="nav__link">Главная</a></li>
-            <li><a href="about.html" class="nav__link">О нас</a></li>
-            <li><a href="contacts.html" class="nav__link">Контакты</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="header__inner">
+                <a class="header__logo" href="index.html">МнеМенюБы</a>
+                <nav class="nav" aria-label="Основная навигация">
+                    <ul class="nav__list">
+                        <li>
+                            <a class="nav__link nav__link--active" href="index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="about.html">О нас</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
     </header>
 
     <!-- Уникальное основное содержимое страницы -->
@@ -53,8 +60,13 @@
         <section id="portfolio">
             <h2>Портфолио</h2>
             <p>Примеры наших работ...</p>
+            <img
+                src="assets/our_work.jpg"
+                alt="Сэндвич котик"
+                width="340" 
+                height="260"
+                loading="lazy">
         </section>
-
         <!-- Секция 3 с якорем -->
         <section id="contacts">
             <h2>Контактная информация</h2>
@@ -71,7 +83,8 @@
     </footer>
 
     <!-- Кнопка открытия модалки -->
-    <button id="openDialog" type="button">Написать нам</button>
+    <button id="openDialog" type="button" class="button">Написать нам</button>
+
     <!-- Модалка с формой -->
     <dialog id="contactDialog" aria-labelledby="dialogTitle">
         <h2 id="dialogTitle">Обратная связь</h2>
