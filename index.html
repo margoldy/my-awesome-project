@@ -6,18 +6,18 @@
     <meta charset="UTF-8">
     <!-- Важная мета-информация для корректного отображения на мобильных устройствах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - МнеМенюБы</title>
+    <title>Главная - ХлебныйМир</title>
     <meta name="description" content="Краткое описание главной страницы вашего сайта">
     <link rel="icon" href="https://margoldy.github.io/my-awesome-project/assets/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph для соцсетей -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Главная - МнеМенюБы">
+    <meta property="og:title" content="Главная - ХлебныйМир">
     <meta property="og:description" content="Краткое описание главной страницы вашего сайта">
     <meta property="og:image" content="assets/favicon.jpg">
 
     <!-- подключение стиля --> 
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles1.css"> 
 </head>
 
 
@@ -26,7 +26,7 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <a class="header__logo" href="index.html">МнеМенюБы</a>
+                <a class="header__logo" href="index.html">ХлебныйМир</a>
                 <nav class="nav" aria-label="Основная навигация">
                     <ul class="nav__list">
                         <li>
@@ -46,44 +46,39 @@
 
     <!-- Уникальное основное содержимое страницы -->
     <main>
-        <h1>Добро пожаловать на наш сайт!</h1>
+        <div class = "container">
+            <h1>Добро пожаловать на наш сайт!</h1>
 
-        <!-- Секция 1 с якорем -->
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <p>Описание предоставляемых услуг...</p>
-            <a href="#contacts">Связаться с нами</a> 
-            <!-- Якорная ссылка внутри страницы -->
-        </section>
+            <!-- Секция 1 с якорем -->
+            <section id="services">
+                <h2>Наши услуги</h2>
+                <p>Описание предоставляемых услуг...</p>
+                <a href="#contacts">Связаться с нами</a> 
+                <!-- Якорная ссылка внутри страницы -->
+            </section>
 
-        <!-- Секция 2 с якорем -->
-        <section id="portfolio">
-            <h2>Портфолио</h2>
-            <p>Примеры наших работ...</p>
-            <img
-                src="assets/our_work.jpg"
-                alt="Сэндвич котик"
-                width="340" 
-                height="260"
-                loading="lazy">
-        </section>
-        <!-- Секция 3 с якорем -->
-        <section id="contacts">
-            <h2>Контактная информация</h2>
-            <p>Наши контакты...</p>
-            <a href="contacts.html">Подробнее</a> 
-            <!-- Ссылка на отдельную страницу -->
-        </section>
+            <!-- Секция 2 с якорем -->
+            <section id="portfolio">
+                <h2>Портфолио</h2>
+                <p>Примеры наших работ...</p>
+                <img
+                    src="assets/our_work.jpg"
+                    alt="Сэндвич котик"
+
+                    >
+            </section>
+            <!-- Секция 3 с якорем -->
+            <section id="contacts">
+                <h2>Контактная информация</h2>
+                <p>Наши контакты...</p>
+                <a href="contacts.html">Подробнее</a> 
+                <!-- Ссылка на отдельную страницу -->
+                <p></p>
+                <!-- Кнопка открытия модалки -->
+                <button id="openDialog" type="button" class="button">Написать нам</button>
+            </section>
+        </div>
     </main>
-
-    <!-- Подвал сайта -->
-    <footer>
-        <p>&copy; 2025 МнеМенюБы. Все права защищены.</p>
-        <p>Телефон: +7 (123) 456-78-90</p>
-    </footer>
-
-    <!-- Кнопка открытия модалки -->
-    <button id="openDialog" type="button" class="button">Написать нам</button>
 
     <!-- Модалка с формой -->
     <dialog id="contactDialog" aria-labelledby="dialogTitle">
@@ -131,6 +126,15 @@
             <button type="button" id="closeConfirmDialog">Оки</button>
         </div>
     </dialog>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ХлебныйМир. Все права защищены.</p>
+            <p>Телефон: <a href="tel:+71234567890" class="footer-phone">+7 (123) 456-78-90</a></p>
+        </div>
+    </footer>
+
     
     <script src="main.js" defer></script>
 
